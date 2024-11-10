@@ -3,188 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Genealogical Tree</title>
+    <title>Genealogy Tree</title>
     <style>
-        .tree ul {
-            padding-top: 20px;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .tree li {
+        ul {
             list-style-type: none;
+            padding-left: 20px;
+        }
+
+        li {
+            margin: 10px 0;
             position: relative;
-            padding: 20px 5px;
-            text-align: center;
-            transition: all 0.5s;
         }
 
-        .tree li::before, .tree li::after {
-            content: '';
+        li::before {
+            content: "";
             position: absolute;
             top: 0;
-            border-top: 1px solid #ccc;
-            width: 50%;
+            left: -20px;
+            width: 20px;
             height: 20px;
+            border-radius: 50%;
+            background-color: black;
         }
-        .tree li::before { right: 50%; }
-        .tree li::after { left: 50%; }
 
-        .tree li:only-child::before, .tree li:only-child::after { display: none; }
-        .tree li:only-child { padding-top: 0; }
+        li > ul {
+            margin-left: 40px;
+        }
 
-        .tree li:first-child::before, .tree li:last-child::after { border: none; }
-
-        .tree li:first-child::after { border-radius: 5px 0 0 0; }
-        .tree li:last-child::before { border-radius: 0 5px 0 0; }
-
-        .tree ul ul::before {
-            content: '';
+        li > ul::before {
+            content: "";
             position: absolute;
-            top: 0;
-            left: 50%;
-            border-left: 1px solid #ccc;
-            width: 0;
-            height: 20px;
+            top: -15px;
+            left: -40px;
+            border-left: 2px solid black;
+            height: 100%;
         }
 
-        .tree li div {
-            display: inline-block;
-            padding: 10px 20px;
-            background: #cce5ff;
-            color: #004085;
-            border: 1px solid #b8daff;
-            border-radius: 5px;
-            transition: background 0.3s;
+        .parent {
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <div class="tree">
-        <ul>
-            <li><div>Сейитказы Моңол</div>
-                <ul>
-                    <li><div>Бердике</div>
-                        <ul>
-                            <li><div>Ороз</div>
-                                <ul>
-                                    <li><div>Кошбай</div>
-                                        <ul>
-                                            <li><div>Жунайт</div>
-                                                <ul>
-                                                    <li><div>Абибилла</div>
-                                                        <ul>
-                                                            <li><div>Аскарбек</div></li>
-                                                            <li><div>Акгуль</div></li>
-                                                            <li><div>Гулшайыр</div></li>
-                                                            <li><div>Тимур</div></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><div>Жуманалы</div>
-                                                        <ul>
-                                                            <li><div>Ысмайыл</div></li>
-                                                            <li><div>Ысакалы</div></li>
-                                                            <li><div>Курбаналы</div></li>
-                                                            <li><div>Жумасия</div></li>
-                                                            <li><div>Жумагуль</div></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><div>Шарбан</div>
-                                                        <ul>
-                                                            <li><div>Султан</div></li>
-                                                            <li><div>Аиша</div></li>
-                                                            <li><div>Зульфия</div></li>
-                                                            <li><div>Адыл</div></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><div>Салан</div>
-                                                        <ul>
-                                                            <li><div>Салима</div></li>
-                                                            <li><div>Гульшат</div></li>
-                                                            <li><div>Гулсара</div></li>
-                                                            <li><div>Буниса</div></li>
-                                                            <li><div>Улун</div></li>
-                                                            <li><div>Бурул</div></li>
-                                                            <li><div>Умсун</div></li>
-                                                            <li><div>Дилбар</div></li>
-                                                            <li><div>Абдурасул</div></li>
-                                                            <li><div>Абдырейим</div></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><div>Меерман</div>
-                                                        <ul>
-                                                            <li><div>Талантбек</div></li>
-                                                            <li><div>Саматбек</div></li>
-                                                            <li><div>Максатбек</div></li>
-                                                            <li><div>Сыдыкбек</div></li>
-                                                            <li><div>Айнагуль</div></li>
-                                                            <li><div>Канышай</div></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><div>Парпыгуль</div>
-                                                        <ul>
-                                                            <li><div>Суйоркул</div></li>
-                                                            <li><div>Сардар</div></li>
-                                                            <li><div>Залкар</div></li>
-                                                            <li><div>Каныкей</div></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li><div>Мансур</div>
-                                                <ul>
-                                                    <li><div>Мухтар</div>
-                                                        <ul>
-                                                            <li><div>Орозалы</div></li>
-                                                            <li><div>Сагын</div></li>
-                                                            <li><div>Нуралы</div></li>
-                                                            <li><div>Азимали</div></li>
-                                                            <li><div>Зейнеп</div></li>
-                                                            <li><div>Жумакан</div></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><div>Акбарали</div>
-                                                        <ul>
-                                                            <li><div>Алтынбек</div></li>
-                                                            <li><div>Ильясбек</div></li>
-                                                            <li><div>Зинагуль</div></li>
-                                                            <li><div>Иманалы</div></li>
-                                                            <li><div>Субаналы</div></li>
-                                                            <li><div>Жийдегул</div></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><div>Мавлюда</div>
-                                                        <ul>
-                                                            <li><div>Махабат</div></li>
-                                                            <li><div>Ирсалат</div></li>
-                                                            <li><div>Сабира</div></li>
-                                                            <li><div>Нургуль</div></li>
-                                                            <li><div>Улан</div></li>
-                                                            <li><div>Нурлан</div></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><div>Бүбүайна</div>
-                                                        <ul>
-                                                            <li><div>Венера</div></li>
-                                                            <li><div>Байдук</div></li>
-                                                            <li><div>Ибарат</div></li>
-                                                            <li><div>Сырга</div></li>
-                                                            <li><div>Жумагуль</div></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </div>
+    <h1>Генеологиялык муун тизмеги</h1>
+    <ul>
+        <li class="parent">Сейитказы Моңол
+            <ul>
+                <li>Бердике
+                    <ul>
+                        <li>Ороз
+                            <ul>
+                                <li>Кошбай
+                                    <ul>
+                                        <li>Жунайт
+                                            <ul>
+                                                <li>Абибилла
+                                                    <ul>
+                                                        <li>Аскарбек</li>
+                                                        <li>Акгуль</li>
+                                                        <li>Гулшайыр</li>
+                                                        <li>Тимур</li>
+                                                    </ul>
+                                                </li>
+                                                <li>Жуманалы
+                                                    <ul>
+                                                        <li>Ысмайыл</li>
+                                                        <li>Ысакалы</li>
+                                                        <li>Курбаналы</li>
+                                                        <li>Жумасия</li>
+                                                        <li>Жумагуль</li>
+                                                    </ul>
+                                                </li>
+                                                <li>Шарбан
+                                                    <ul>
+                                                        <li>Султан</li>
+                                                        <li>Аиша</li>
+                                                        <li>Зульфия</li>
+                                                        <li>Адыл</li>
+                                                    </ul>
+                                                </li>
+                                                <li>Салан
+                                                    <ul>
+                                                        <li>Салима</li>
+                                                        <li>Гульшат</li>
+                                                        <li>Гулсара</li>
+                                                        <li>Буниса</li>
+                                                        <li>Улун</li>
+                                                        <li>Бурул</li>
+                                                        <li>Умсун</li>
+                                                        <li>Дилбар</li>
+                                                        <li>Абдурасул</li>
+                                                        <li>Абдырейим</li>
+                                                    </ul>
+                                                </li>
+                                                <li>Меерман
+                                                    <ul>
+                                                        <li>Талантбек</li>
+                                                        <li>Саматбек</li>
+                                                        <li>Максатбек</li>
+                                                        <li>Сыдыкбек</li>
+                                                        <li>Айнагуль</li>
+                                                        <li>Канышай</li>
+                                                    </ul>
+                                                </li>
+                                                <li>Парпыгуль
+                                                    <ul>
+                                                        <li>Суйоркул</li>
+                                                        <li>Сардар</li>
+                                                        <li>Залкар</li>
+                                                        <li>Каныкей</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>Мансур
+                                            <ul>
+                                                <li>Мухтар
+                                                    <ul>
+                                                        <li>Орозалы</li>
+                                                        <li>Сагын</li>
+                                                        <li>Нуралы</li>
+                                                        <li>Азимали</li>
+                                                        <li>Зейнеп</li>
+                                                        <li>Жумакан</li>
+                                                    </ul>
+                                                </li>
+                                                <li>Акбарали
+                                                    <ul>
+                                                        <li>Алтынбек</li>
+                                                        <li>Ильясбек</li>
+                                                        <li>Зинагуль</li>
+                                                        <li>Иманалы</li>
+                                                        <li>Субаналы</li>
+                                                        <li>Жийдегул</li>
+                                                    </ul>
+                                                </li>
+                                                <li>Мавлюда
+                                                    <ul>
+                                                        <li>Махабат</li>
+                                                        <li>Ирсалат</li>
+                                                        <li>Сабира</li>
+                                                        <li>Нургуль</li>
+                                                        <li>Улан</li>
+                                                        <li>Нурлан</li>
+                                                    </ul>
+                                                </li>
+                                                <li>Бүбүайна
+                                                    <ul>
+                                                        <li>Венера</li>
+                                                        <li>Байдук</li>
+                                                        <li>Ибарат</li>
+                                                        <li>Сырга</li>
+                                                        <li>Жумагуль</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
 </body>
 </html>
